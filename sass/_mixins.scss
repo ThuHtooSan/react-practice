@@ -1,0 +1,55 @@
+@mixin flex-row() {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-row-center() {
+  @include flex-row();
+  justify-content: center;
+}
+
+@mixin flex-col() {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@mixin flex-col-center() {
+  @include flex-col();
+  align-items: center;
+}
+
+// navbar
+@mixin navbar($bg: none, $color: inherit) {
+  @include flex-row();
+  justify-content: space-between;
+  padding: 15px 50px;
+  background: $bg;
+  color: $color;
+  margin-bottom: 15px;
+}
+
+// nav links
+@mixin navlinks($gap, $color: inherit, $hover-color: null) {
+  @include flex-row();
+  gap: $gap;
+  
+  & > a {
+    text-decoration: none;
+  }
+
+  & > li {
+    list-style-type: none;
+    margin-inline: none;
+  }
+
+  & > * {
+    color: $color;
+
+    @if ($hover-color) {
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
+}
