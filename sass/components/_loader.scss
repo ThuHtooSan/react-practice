@@ -1,5 +1,6 @@
 .loader-container {
   @include modal-container();
+  cursor: wait;
 
   .loader {
     @include modal-center(mix(#fff, $bg, 40%), $secondary, 300px);
@@ -7,6 +8,7 @@
     .icon {
       font-size: 3rem;
       animation: rotate .7s linear infinite;
+      color: $tertiary;
     }
   
     .description {

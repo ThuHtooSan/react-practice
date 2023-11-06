@@ -1,29 +1,59 @@
 .error-container {
   @include modal-container();
+  pointer-events: none;
 
   .error {
     @include modal-center(mix(#fff, $bg, 40%), $secondary);
+    pointer-events: auto;
 
     .remove-error {
       @include modal-remove-btn();
+      color: $tertiary;
+
+      &:hover {
+        color: $primary;
+      }
+
+      &:active {
+        color: darken($primary, 20%);
+      }
     }
 
     .icon {
       font-size: 4rem;
       margin-bottom: 10px;
+      color: $tertiary;
     }
     
     .reason {
       font-size: 1.5rem;
       line-height: 1.4;
+      width: 100%;
     }
     
     .suggestion {
       font-size: 0.9rem;
+
+      a {
+        color: inherit;
+      }
     }
     
-    a {
-      color: inherit;
+    .report {
+      @include flex-row;
+      padding: 10px 17px;
+      border-radius: $pill-border;
+      box-shadow: $box-shadow;
+      background: $primary;
+      color: $white;
+      border: none;
+      font-size: 1rem;
+      text-decoration: none;
+
+      &:hover {
+        background: lighten($bg, 10%);
+        color: $primary;
+      }
     }
   }
   

@@ -2,6 +2,7 @@ $yellow: rgb(251, 236, 178);
 $pink: rgb(248, 189, 235);
 $blue: rgb(82, 114, 242);
 $navy: rgb(7, 37, 65);
+$light-navy: rgb(36, 20, 104);
 $grey: rgb(155, 164, 181);
 $dark-grey: darken($grey, 40%);
 $white: rgb(241, 246, 249);
@@ -10,18 +11,19 @@ $black: $dark-navy;
 
 $primary: $blue;
 $secondary: $navy;
-$tertiary: $pink;
+$tertiary: $light-navy;
 $muted: $grey;
 $bg: $pink;
 
 $max-width: 1000px;
 
 $border-radius: 8px;
-$pill-border: 50%;
+$pill-border: 30px;
 
-$box-shadow: 0 0 7px lighten($grey, 20%);
+$box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
 
-$transition: .3s;
+$transition-duration: .3s;
+$animation-duration: .5s;
 
 $button-bg: $secondary;
 $button-color: $white;

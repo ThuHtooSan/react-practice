@@ -38,35 +38,46 @@
   width: 100%;
   height: 100%;
   background: $bg;
-  transition: $transition;
-  cursor: not-allowed;
+  transition: $transition-duration;
 }
 
 @mixin modal($bg: #fff, $color: inherit, $width: auto, $gap: 25px) {
   @include flex-col($gap);
   width: $width;
-  padding: 40px;
+  min-width: 250px;
+  padding: 40px 40px;
   position: relative;
-  border-radius: $border-radius;
   background: transparentize($bg, .5);
   backdrop-filter: blur(8px);
-  transition: $transition;
-  color: inherit;
-  cursor: auto;
+  transition: $transition-duration;
+  color: $color;
+  animation: fadeIn $animation-duration 1;
+
+  @if ($width != 100% and $width != 100vw) {
+    max-width: 90%;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+  } @else {
+    height: 100%;
+  }
+
+  @media screen and (max-width: 500px) {
+    padding: 20px;
+  }
 }
 
 @mixin modal-center($bg: #fff, $color: inherit, $width: auto, $gap: 25px) {
   @include modal($bg, $color, $width, $gap);
+  justify-content: center;
   align-items: center;
   text-align: center;
-  max-width: 90%;
 }
 
 @mixin modal-remove-btn($side: right) {
   position: absolute;
   top: 20px;
   #{$side}: 20px;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   background: none;
   border: none;
 }

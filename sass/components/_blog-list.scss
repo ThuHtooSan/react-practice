@@ -1,6 +1,5 @@
 .blog-list {
   @include flex-col(30px);
-  align-items: center;
 
   .blog-preview {
     @include flex-col(10px);
@@ -8,13 +7,13 @@
     max-width: $max-width;
     border-radius: $border-radius;
     padding: 10px 13px;
-    transition: $transition;
-    background: lighten($pink, 10%);
+    transition: $transition-duration;
+    background: lighten($bg, 10%);
     color: $secondary;
+    box-shadow: $box-shadow;
 
     &:hover {
       background: darken($bg, 10%);
-      box-shadow: $box-shadow;
     }
 
     .title {
@@ -25,5 +24,9 @@
     .author {
       color: $navy;
     }
+  }
+
+  a {
+    text-decoration: none;
   }
 }
