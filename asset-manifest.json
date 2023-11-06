@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ThuHtooSan/react-practice/static/css/main.dfde7bd9.css",
+    "main.js": "/ThuHtooSan/react-practice/static/js/main.d9fef1eb.js",
+    "index.html": "/ThuHtooSan/react-practice/index.html",
+    "main.dfde7bd9.css.map": "/ThuHtooSan/react-practice/static/css/main.dfde7bd9.css.map",
+    "main.d9fef1eb.js.map": "/ThuHtooSan/react-practice/static/js/main.d9fef1eb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dfde7bd9.css",
+    "static/js/main.d9fef1eb.js"
+  ]
+}
