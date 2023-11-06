@@ -5,10 +5,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
 
-*:not(i) {
-  font-family: 'Gabarito', sans-serif;
+  &:not(i) {
+    font-family: 'Gabarito', sans-serif;
+  }
 }
 
 body {
@@ -20,8 +20,15 @@ button > * {
   pointer-events: none;
 }
 
-a, button {
-  transition: .3s;
+@media (prefers-reduced-motion: no-preference) {
+  a {
+    color: inherit;
+  }
+
+  a, button {
+    transition: $transition;
+    cursor: pointer;
+  }
 }
 
 ::selection {

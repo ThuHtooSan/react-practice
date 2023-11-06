@@ -1,0 +1,16 @@
+.loader-container {
+  @include modal-container();
+
+  .loader {
+    @include modal-center(mix(#fff, $bg, 40%), $secondary, 300px);
+
+    .icon {
+      font-size: 3rem;
+      animation: rotate .7s linear infinite;
+    }
+  
+    .description {
+      font-size: 1.2rem;
+    }
+  }
+}

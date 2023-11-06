@@ -1,0 +1,30 @@
+.error-container {
+  @include modal-container();
+
+  .error {
+    @include modal-center(mix(#fff, $bg, 40%), $secondary);
+
+    .remove-error {
+      @include modal-remove-btn();
+    }
+
+    .icon {
+      font-size: 4rem;
+      margin-bottom: 10px;
+    }
+    
+    .reason {
+      font-size: 1.5rem;
+      line-height: 1.4;
+    }
+    
+    .suggestion {
+      font-size: 0.9rem;
+    }
+    
+    a {
+      color: inherit;
+    }
+  }
+  
+}

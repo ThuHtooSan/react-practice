@@ -1,22 +1,74 @@
-@mixin flex-row() {
+// flex alignments
+@mixin flex-row($gap: 0px) {
   display: flex;
   align-items: center;
+  gap: $gap;
 }
 
-@mixin flex-row-center() {
-  @include flex-row();
+@mixin flex-row-center($gap: 0px) {
+  @include flex-row($gap);
   justify-content: center;
 }
 
-@mixin flex-col() {
+@mixin flex-col($gap: 0px) {
   display: flex;
   flex-direction: column;
+  gap: $gap;
+}
+
+@mixin flex-col-center($gap: 0px) {
+  @include flex-col($gap);
   justify-content: center;
 }
 
-@mixin flex-col-center() {
-  @include flex-col();
+@mixin fix-center() {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// modal
+
+@mixin modal-container($bg: none) {
+  @include flex-row-center();
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $bg;
+  transition: $transition;
+  cursor: not-allowed;
+}
+
+@mixin modal($bg: #fff, $color: inherit, $width: auto, $gap: 25px) {
+  @include flex-col($gap);
+  width: $width;
+  padding: 40px;
+  position: relative;
+  border-radius: $border-radius;
+  background: transparentize($bg, .5);
+  backdrop-filter: blur(8px);
+  transition: $transition;
+  color: inherit;
+  cursor: auto;
+}
+
+@mixin modal-center($bg: #fff, $color: inherit, $width: auto, $gap: 25px) {
+  @include modal($bg, $color, $width, $gap);
   align-items: center;
+  text-align: center;
+  max-width: 90%;
+}
+
+@mixin modal-remove-btn($side: right) {
+  position: absolute;
+  top: 20px;
+  #{$side}: 20px;
+  font-size: 1.6rem;
+  background: none;
+  border: none;
 }
 
 // navbar
@@ -31,10 +83,9 @@
 
 // nav links
 @mixin navlinks($gap, $color: inherit, $hover-color: null) {
-  @include flex-row();
-  gap: $gap;
+  @include flex-row($gap);
   
-  & > a {
+  a {
     text-decoration: none;
   }
 
@@ -49,6 +100,10 @@
     @if ($hover-color) {
       &:hover {
         color: $hover-color;
+      }
+
+      &:active {
+        color: darken($hover-color, 20%);
       }
     }
   }

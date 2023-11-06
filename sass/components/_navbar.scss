@@ -2,6 +2,6 @@
   @include navbar(none, $primary);
 
   .links {
-    @include navlinks(15px, $secondary, $primary);
+    @include navlinks(20px, $secondary, $primary);
   }
 }

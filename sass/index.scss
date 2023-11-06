@@ -1,8 +1,12 @@
 @import 'variables';
 @import 'functions';
 @import 'mixins';
+@import 'animations';
 
 @import 'base';
 
 // components
+@import 'components/loader';
+@import 'components/error';
 @import 'components/navbar';
+@import 'components/blog-list';
