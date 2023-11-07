@@ -1,0 +1,19 @@
+.blog-details {
+  @include flex-col(20px);
+  color: $tertiary;
+  animation: fadeIn $animation-duration 1;
+
+  .blog-title {
+    color: $primary;
+    text-align: center;
+  }
+
+  .blog-author {
+    color: $dark-grey;
+    text-transform: capitalize;
+  }
+
+  .blog-body {
+    line-height: 2;
+  }
+}

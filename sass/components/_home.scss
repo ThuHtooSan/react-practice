@@ -1,4 +1,6 @@
 .content {
-  width: 1000px;
+  width: 100%;
+  max-width: $max-width;
   margin-inline: auto;
+  padding: 40px;
 }

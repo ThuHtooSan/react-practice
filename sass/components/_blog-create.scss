@@ -1,0 +1,43 @@
+.blog-create {
+  @include flex-col(20px);
+  max-width: 600px;
+  margin-inline: auto;
+  animation: fadeIn $animation-duration 1;
+
+  .title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  input {
+    background: $white;
+    padding: 15px 20px;
+    border-radius: $border-radius;
+    border: none;
+    box-shadow: $box-shadow;
+    font-size: 1rem;
+    margin-bottom: 10px;
+
+    &[type=submit] {
+      background: $primary;
+      color: $white;
+      width: auto;
+      padding: 12px 17px;
+      margin-inline: auto;
+      cursor: pointer;
+    }
+
+    &:disabled {
+      background: $muted;
+    }
+  }
+
+  textarea {
+    @extend input;
+  }
+
+  select {
+    @extend input;
+  }
+}

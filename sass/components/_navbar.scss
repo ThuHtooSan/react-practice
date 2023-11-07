@@ -1,7 +1,11 @@
 .navbar {
   @include navbar(none, $primary);
 
-  .links {
+  a {
+    text-decoration: none;
+  }
+
+  .nav-links {
     @include navlinks(20px, $secondary, $primary);
   }
 }

@@ -1,6 +1,7 @@
 {
   "name": "dojo-blog",
   "version": "0.1.0",
+  "homepage": "",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
@@ -11,6 +12,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "dotenv": "^16.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.18.0",
@@ -18,10 +20,16 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run gulp-build && react-scripts build && cp build/index.html build/404.html",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "gulp": "npx gulp",
+    "gulp-build": "npx gulp build",
+    "json-server": "npx json-server --watch db.json --port 8000",
+    "development": "concurrently -n React,Sass,API -c \"bgBlue.bold,bgRed.bold,bgMagenta.bold\" -k --kill-signal \"SIGKILL\" \"npm:start\" \"npm:gulp\" \"npm:json-server\""
   },
   "eslintConfig": {
     "extends": [
@@ -42,8 +50,9 @@
     ]
   },
   "devDependencies": {
+    "concurrently": "^8.2.2",
+    "gh-pages": "^6.0.0",
     "gulp": "^4.0.2",
-    "gulp-clean-css": "^4.3.0",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
     "sass": "^1.69.5"

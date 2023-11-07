@@ -5,6 +5,12 @@ const useFetch = (url) => {
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
 
+  // replace local json server url with JSON Placeholder server url
+  // in production build
+  if (process.env.NODE_ENV === 'production') {
+    url = url.replace(/http:\/\/localhost:8000/, 'https://my-json-server.typicode.com/thuhtoosan/react-practice');
+  }
+
   const errorController = () => {
     setError(null);
   }
@@ -25,9 +31,7 @@ const useFetch = (url) => {
   }
 
   useEffect(() => {
-    setTimeout(() => {
-      fetchData(url)
-    }, 1000);
+    fetchData(url);
   }, [url]);
 
   return { data, isPending, error, errorController };
