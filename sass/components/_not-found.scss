@@ -1,0 +1,35 @@
+.not-found-container {
+  @include flex-col-center(80px);
+  height: 70vh;
+  text-align: center;
+  animation: fadeIn $animation-duration 1;
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .icon {
+    font-size: 6rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 2;
+
+    .path-url {
+      color: $error;
+    }
+  }
+
+  .go-back {
+    @include flex-row-center(10px);
+    align-self: center;
+    padding: 12px 15px;
+    background: $error;
+    border: none;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    font-size: 1rem;
+    color: $white;
+  }
+}

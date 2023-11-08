@@ -22,7 +22,13 @@
     }
 
     .author {
-      color: $navy;
+      color: transparentize($navy, .2);
+      text-transform: capitalize;
+
+      .icon {
+        margin-right: 5px;
+        font-size: .9em;
+      }
     }
   }
 

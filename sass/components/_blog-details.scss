@@ -4,7 +4,6 @@
   animation: fadeIn $animation-duration 1;
 
   .blog-title {
-    color: $primary;
     text-align: center;
   }
 
@@ -13,7 +12,33 @@
     text-transform: capitalize;
   }
 
-  .blog-body {
+  .blog-body p {
+    margin-bottom: 10px;
     line-height: 2;
+  }
+
+  .delete {
+    align-self: flex-end;
+    padding: 12px 15px;
+    border-radius: $pill-border;
+    background: $error;
+    box-shadow: $box-shadow;
+    color: $white;
+    border: none;
+
+    &:hover {
+      background: $white;
+      color: $error;
+    }
+
+    &:active {
+      background: darken($error, 20%);
+      color: $white;
+    }
+
+    .icon {
+      margin-left: 5px;
+      font-size: inherit;
+    }
   }
 }

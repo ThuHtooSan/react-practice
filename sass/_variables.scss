@@ -5,6 +5,7 @@ $navy: rgb(7, 37, 65);
 $light-navy: rgb(36, 20, 104);
 $teal: rgb(31, 138, 112);
 $green: rgb(3, 201, 136);
+$red: rgb(216, 0, 50);
 $grey: rgb(155, 164, 181);
 $dark-grey: darken($grey, 20%);
 $white: rgb(241, 246, 249);
@@ -16,6 +17,7 @@ $secondary: $navy;
 $tertiary: $light-navy;
 $muted: $grey;
 $success: $green;
+$error: $red;
 $bg: $pink;
 
 $max-width: 1000px;

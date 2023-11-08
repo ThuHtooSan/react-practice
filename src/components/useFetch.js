@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useFetch = (url) => {
+const useFetch = ({ url, errorMessage }) => {
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
@@ -15,7 +15,7 @@ const useFetch = (url) => {
     setError(null);
   }
 
-  const fetchData = async (url) => {
+  const fetchData = async () => {
     try {
       const res = await fetch(url);
       if (!res.ok) throw Error(res.status);
@@ -24,14 +24,14 @@ const useFetch = (url) => {
       setData(fetchedData);
       setError(null);
     } catch (err) {
-      setError(err.message);
+      setError({ message: errorMessage, status: err.message  });
     } finally {
       setIsPending(false);
     }
   }
 
   useEffect(() => {
-    fetchData(url);
+    fetchData();
   }, [url]);
 
   return { data, isPending, error, errorController };

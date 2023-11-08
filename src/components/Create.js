@@ -34,15 +34,15 @@ const Create = () => {
         body: JSON.stringify(blog)
       });
       
-      if(res.status !== 201) throw Error(res.status);
+      if(!res.ok) throw Error(res.status);
 
       // created blog's id
       const createdBlog = await res.json();
       const blogId = await createdBlog.id;
       
-      setSuccess({ status: res.status, blogId });
+      setSuccess({ message: 'Blog Created', blogId });
     } catch (err) {
-      setError(err.message);
+      setError({ message: 'Could Not Create Blog', status: err.message  });
     } finally {
       setIsPending(false);
     }

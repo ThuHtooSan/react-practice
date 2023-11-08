@@ -18,14 +18,21 @@
     box-shadow: $box-shadow;
     font-size: 1rem;
     margin-bottom: 10px;
+    transition: $transition-duration;
 
     &[type=submit] {
       background: $primary;
       color: $white;
+      border-radius: $pill-border;
       width: auto;
       padding: 12px 17px;
       margin-inline: auto;
       cursor: pointer;
+
+      &:hover {
+        background: $white;
+        color: $primary;
+      }
     }
 
     &:disabled {

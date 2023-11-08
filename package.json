@@ -13,6 +13,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "dotenv": "^16.3.1",
+    "html-react-parser": "^5.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.18.0",
@@ -29,7 +30,7 @@
     "gulp": "npx gulp",
     "gulp-build": "npx gulp build",
     "json-server": "npx json-server --watch db.json --port 8000",
-    "development": "concurrently -n React,Sass,API -c \"bgBlue.bold,bgRed.bold,bgMagenta.bold\" -k --kill-signal \"SIGKILL\" \"npm:start\" \"npm:gulp\" \"npm:json-server\""
+    "development": "concurrently -n React,Sass,HTTP -c \"bgBlue.bold,bgRed.bold,bgMagenta.bold\" -k --kill-signal \"SIGKILL\" \"npm:start\" \"npm:gulp\" \"npm:json-server\""
   },
   "eslintConfig": {
     "extends": [

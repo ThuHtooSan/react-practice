@@ -4,7 +4,10 @@ import ErrorView from './ErrorView';
 import useFetch from './useFetch';
 
 const Home = () => {
-  const { data: blogs, isPending, error, errorController } = useFetch('http://localhost:8000/blogs');
+  const { data: blogs, isPending, error, errorController } = useFetch({
+    url: 'http://localhost:8000/blogs',
+    errorMessage: 'Could Not Fetch Blogs'
+  });
 
   return (
     <div className='home'>

@@ -14,11 +14,10 @@
 
     .message {
       @extend .message;
-      color: $success;
     }
 
     .btn-group {
-      @include flex-row(20px);
+      @extend .btn-group;
 
       a {
         color: inherit;
@@ -27,11 +26,14 @@
         .back-to-home {
           @extend .report;
           background: $success;
+
+          &:hover {
+            color: $success;
+          }
         }
 
         .go-to-blog {
-          @extend .back-to-home;
-          background: $primary;
+          @extend .report;
         }
       }
     }

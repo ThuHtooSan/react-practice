@@ -45,9 +45,10 @@
   @include flex-col($gap);
   width: $width;
   min-width: 250px;
+  min-height: 200px;
   padding: 40px 40px;
   position: relative;
-  background: transparentize($bg, .5);
+  background: transparentize($bg, .4);
   backdrop-filter: blur(8px);
   transition: $transition-duration;
   color: $color;
@@ -62,7 +63,7 @@
   }
 
   @media screen and (max-width: 500px) {
-    padding: 20px;
+    padding: 30px;
   }
 }
 
@@ -86,10 +87,12 @@
 @mixin navbar($bg: none, $color: inherit) {
   @include flex-row();
   justify-content: space-between;
-  padding: 15px 50px;
+  padding: 20px;
   background: $bg;
   color: $color;
   margin-bottom: 15px;
+  max-width: $max-width;
+  margin-inline: auto;
 }
 
 // nav links
